@@ -3,6 +3,12 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
+  root: 'client',
+  publicDir: 'public',
+  build: {
+    outDir: '../dist',
+    emptyOutDir: true,
+  },
   plugins: [react()],
   server: {
     host: '0.0.0.0',
