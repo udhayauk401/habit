@@ -1,0 +1,419 @@
+.habit-table-container {
+  padding: 16px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.habit-table-container.dark {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.year-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  background: rgba(248, 250, 252, 0.9);
+}
+
+.habit-table-container.dark .year-navigation {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.year-navigation h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.year-navigation button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.month-filter-section {
+  padding: 14px 16px;
+  border-radius: 20px;
+  background: rgba(248, 250, 252, 0.9);
+  margin-bottom: 16px;
+}
+
+.habit-table-container.dark .month-filter-section {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 10px;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.filter-btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-btn.select-all {
+  background: rgba(99, 102, 241, 0.12);
+  color: #4338ca;
+}
+
+.filter-btn.clear-all {
+  background: rgba(248, 113, 113, 0.12);
+  color: #b91c1c;
+}
+
+.month-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
+  gap: 8px;
+}
+
+.month-checkbox input {
+  display: none;
+}
+
+.month-label {
+  display: block;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #475569;
+  font-weight: 700;
+  font-size: 0.82rem;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  transition: all 0.22s ease;
+}
+
+.habit-table-container.dark .month-label {
+  background: rgba(15, 23, 42, 0.72);
+  color: #e2e8f0;
+}
+
+.month-checkbox input:checked + .month-label,
+.month-label.active {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.2);
+}
+
+.no-months-message {
+  padding: 24px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(248, 250, 252, 0.8);
+  color: #64748b;
+}
+
+.month-table-section {
+  margin-top: 14px;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.habit-table-container.dark .month-table-section {
+  background: rgba(15, 23, 42, 0.75);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+.month-title {
+  padding: 14px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.14), rgba(139, 92, 246, 0.14));
+}
+
+.month-title h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.month-subtitle {
+  margin: 2px 0 0;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.month-percentage {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.month-percentage.fit {
+  color: #15803d;
+}
+
+.month-percentage.unfit {
+  color: #b91c1c;
+}
+
+.progress-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px 16px 0;
+}
+
+.progress-item {
+  padding: 10px;
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.9);
+}
+
+.habit-table-container.dark .progress-item {
+  background: rgba(30, 41, 59, 0.7);
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.progress-bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.95);
+  overflow: hidden;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.month-table-wrapper {
+  overflow-x: auto;
+  padding: 12px 12px 16px;
+}
+
+.month-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.month-table thead {
+  background: rgba(248, 250, 252, 0.95);
+}
+
+.habit-table-container.dark .month-table thead {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.month-table th {
+  padding: 10px 6px;
+  text-align: center;
+  font-size: 0.74rem;
+  color: #64748b;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.habit-name-col {
+  width: 140px;
+  text-align: left;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: inherit;
+}
+
+.day-header {
+  min-width: 50px;
+  padding: 8px 4px;
+}
+
+.day-number {
+  font-weight: 800;
+  color: #4338ca;
+  font-size: 0.83rem;
+}
+
+.day-name {
+  font-size: 0.66rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.habit-row {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.habit-name {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 8px;
+  min-width: 140px;
+}
+
+.habit-name span {
+  font-weight: 700;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(248, 113, 113, 0.14);
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+.day-cell,
+.empty-day-cell {
+  min-width: 50px;
+  height: 44px;
+  text-align: center;
+  padding: 4px 2px;
+}
+
+.day-checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.day-checkbox-wrapper input {
+  display: none;
+}
+
+.day-checkbox-mark {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  display: inline-block;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.day-checkbox-mark:hover {
+  transform: scale(1.12);
+}
+
+.day-checkbox-mark.completed {
+  background: #22c55e;
+  border-color: #16a34a;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.16);
+}
+
+.day-checkbox-mark.pending {
+  background: transparent;
+  border-color: #cbd5e1;
+}
+
+.day-checkbox-mark.absent {
+  background: #fecaca;
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.16);
+}
+
+.stats-row {
+  background: rgba(248, 250, 252, 0.95);
+}
+
+.habit-table-container.dark .stats-row {
+  background: rgba(30, 41, 59, 0.95);
+}
+
+.stats-label {
+  padding: 10px 8px;
+  font-weight: 700;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: inherit;
+}
+
+.stats-cell {
+  text-align: center;
+}
+
+.daily-percent {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.1);
+  color: #4338ca;
+  font-weight: 700;
+  font-size: 0.76rem;
+}
+
+@media (max-width: 1024px) {
+  .progress-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .habit-table-container {
+    padding: 10px;
+  }
+
+  .year-navigation {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .month-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+

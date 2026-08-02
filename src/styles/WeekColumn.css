@@ -1,0 +1,93 @@
+/* Week Column Styles */
+.week-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.week-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.day-header {
+  text-align: center;
+  font-weight: 600;
+  color: #666;
+  font-size: 11px;
+  padding: 4px;
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.week-checkboxes {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.habit-checkbox {
+  display: none;
+}
+
+.checkbox-mark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.2s;
+  background: white;
+  color: #999;
+  user-select: none;
+}
+
+.checkbox-wrapper input:checked + .checkbox-mark {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 2px 5px rgba(102, 126, 234, 0.3);
+}
+
+.checkbox-wrapper:hover .checkbox-mark {
+  border-color: #667eea;
+  background: #f9f9f9;
+}
+
+.checkbox-wrapper input:checked:hover + .checkbox-mark {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .week-header,
+  .week-checkboxes {
+    gap: 2px;
+  }
+
+  .checkbox-mark {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+  .day-header {
+    font-size: 9px;
+    padding: 2px;
+  }
+}
